@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+
+:root {
+   --button-color: #0A99FE;
+   --button-menu-hover: #0A99FE 10%;
+   --title--:#1B1B1B;
+   --Text--:#868383;
+   --backgroudn-nav-bar:#FFFFFF;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--backgroudn-nav-bar);
+}
+
+header > nav > button {
+    border: 0px solid transparent;
+    width:150px;
+    height: 40px;
+    color: #0A99FE;
+    border-radius: 10px;
+    font-size: 20px;
+}
+
+header > nav > button:hover {
+    background-color: #0A99FE;
+    color: var(--backgroudn-nav-bar);
+}
+
+header > nav > button > a {
+   text-decoration: none;
+   color: var(--button-color);
+}
+
+main > .paingintgs > ul > .cards {
+    max-width: 207px;
+    max-height: 275px;
+}
+
+img {
+    max-width: 207px;
+    max-height: 275px;
+}
