@@ -18,7 +18,7 @@ const productsArray = [
     image: "./assets/img/paintings/quadro-controle.jpg",
     name: "Controle Playstation",
     price: "R$99,00",
-    type: "Paints"
+    type: "Paintings"
   },
   {
     image: "./assets/img/paintings/quadro-mario.jpg",
@@ -27,13 +27,13 @@ const productsArray = [
     type: "Paintings"
   },
   {
-    image: "./assets/img/paintgs/quadro-pacman.jpg",
+    image: "./assets/img/paintings/quadro-pacman.jpg",
     name: "PacMan",
     price: "R$160,00",
-    type: "Paintgs"
+    type: "Paintings"
   },
   {
-    image: "./assets/img/paintgs/quadro-relogio.jpg",
+    image: "./assets/img/paintings/quadro-relogio.jpg",
     name: "Smart Watch",
     price: "R$120,00",
     type: "Paintings"
@@ -42,7 +42,7 @@ const productsArray = [
     image: "./assets/img/actions/godzilla-action-figure.jpg",
     name: "Godzilla",
     price: "R$700,00",
-    type: "Paintings"
+    type: "Action Figures"
   },
   {
     image: "./assets/img/actions/groot-action-figure.jpg",
@@ -70,36 +70,44 @@ const productsArray = [
   }
 ];
 
-const listPainted = document.querySelector('.listPaint')
-const listActions = document.querySelector('.listAction')
+function addItensOnCatalog(productsArray) {
 
-for(let i = 0; i < productsArray.length; i++) {
-  const product = productsArray[i]
+  const listPainted = document.querySelector('.paintings')
+  const listActions = document.querySelector('.actions')
 
-  const listItem = document.createElement('li');
-  listItem.classList.add('card')
+  for (let i = 0; i < productsArray.length; i++) {
+    const product = productsArray[i]
 
-  const content = document.createElement('div');
-  content.classList.add('card-content');
+    const listItem = document.createElement('li');
+    listItem.classList.add('card')
 
-  const name = document.createElement('h2');
-  name.innerHTML = product.name
+    const content = document.createElement('div');
+    content.classList.add('card-content');
 
-  const price = document.createElement('p');
-  price.textContent = product.price 
+    const name = document.createElement('h2');
+    name.innerHTML = product.name
 
-  content.appendChild(name)
-  content.appendChild(price)
-  listItem.appendChild(content)
+    const price = document.createElement('p');
+    price.textContent = product.price
 
-  if(product.type === "Paintings") {
-    listPainted.appendChild(listItem)
-  } else if (product.type === "Action Figures") {
-    listActions.appendChild(listItem)
+    const image = document.createElement('img')
+    image.src = product.image
+    image.classList.add('images')
+
+    content.appendChild(name)
+    content.appendChild(price)
+    listItem.appendChild(image)
+    listItem.appendChild(content)
+
+    if (product.type === "Paintings") {
+      listPainted.appendChild(listItem)
+    } else if (product.type === "Action Figures") {
+      listActions.appendChild(listItem)
+    }
   }
 }
 
-console.log(product)
+addItensOnCatalog(productsArray)
 
 
 
